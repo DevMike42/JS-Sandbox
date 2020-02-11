@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Algorithms</title>
+</head>
+
+<body>
+  <h1>String Algorithms</h1>
+</body>
+
+<script>
+  // Takes a string, outputs number of vowels (not including y)
+  function countVowels(string) {
+    let count = 0;
+    let input = string.toLowerCase();
+    let vowelArr = ["a", "e", "i", "o", "u"];
+    for (let i = 0; i < input.length; i++) {
+      if (vowelArr.includes(input[i])) {
+        count++;
+      }
+    }
+    return count;
+  };
+
+  let string1 = "Mississippi";
+  let string2 = "Shhhhh";
+
+  console.log("Total number of vowels = " + countVowels(string1));
+  console.log("Total number of vowels = " + countVowels(string2));
+
+  // ======================================================================
+  // Takes in single word as string and checks if it is a palindrome
+  function isPalindrome(string) {
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] !== string[string.length - (i + 1)]) {
+        return false;
+      }
+    }
+    return true;
+  };
+
+  console.log("Without Array Method: racecar > " + isPalindrome('racecar'));
+  console.log("Without Array Method: developer > " + isPalindrome('developer'));
+
+  function isPalindromeMethod(string) {
+    return string.split("").reverse().join("") === string;
+  };
+
+  console.log("With Array Methods: racecar > " + isPalindromeMethod('racecar'));
+  console.log("With Array Methods: developer > " + isPalindromeMethod('developer'));
+
+
+  // ======================================================================
+  // Takes a string, outputs the first occurence of a character that does not 
+  // repeat itself in that string
+  function firstNonRepeatChar(input) {
+    let charCount = {};
+    for (let i = 0; i < input.length; i++) {
+      let char = input[i];
+      if (charCount[char]) {
+        charCount[char]++;
+      }
+      else {
+        charCount[char] = 1;
+      }
+    }
+    for (let j = 0; j < charCount; j++) {
+      if (charCount[j] == 1) {
+        return j;
+      }
+    }
+  };
+
+  let input1 = "the quick brown fox jumps over the calm kitten quietly";
+  let input2 = "this hat is the greatest";
+  let input3 = "what a wonderful day it has been!";
+
+  console.log(firstNonRepeatChar(input1));
+  console.log(firstNonRepeatChar(input2));
+  console.log(firstNonRepeatChar(input3));
+
+
+
+
+</script>
+
+</html>

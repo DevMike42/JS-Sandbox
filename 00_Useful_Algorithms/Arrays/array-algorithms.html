@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Algorithms</title>
+</head>
+
+<body>
+  <h1>Array Algorithms</h1>
+</body>
+
+<script>
+  // Outputs highest number in array
+  function findMax(numArr) {
+    let maxNum = 0;
+    for (let i = 0; i < numArr.length; i++) {
+      console.log(numArr[i]);
+
+      if (numArr[i] > maxNum) {
+        maxNum = numArr[i];
+      }
+      console.log(`maxNum = ${maxNum}`);
+    }
+    return `Highest Number is ${maxNum}`;
+  };
+
+  let array = [2, 5, 1, 7, 3, 8, 6];
+
+  console.log(findMax(array));
+
+</script>
+
+</html>
