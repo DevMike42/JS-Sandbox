@@ -13,22 +13,36 @@ const companies = [
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 21];
 
 
-// PROBLEM
-// ======================================================
+// GET ALL AGES THAT ARE 21 AND OVER
 
+// ======================================================
 // Vanilla Method (for Loop)
 
+let canDrinkVanilla = [];
+for (let i = 0; i < ages.length; i++) {
+  if (ages[i] >= 21) {
+    canDrinkVanilla.push(ages[i]);
+  }
+};
+console.log(canDrinkVanilla);
 
 console.log('============================================');
 
-// Prototype Method: 
+// Prototype Method: filter()
 // Desc: 
-// Parameters: ()
-// cb Paramters: ()
-// Return Value: 
-
+// Parameters: (cb function)
+// cb Paramters: (iterator, index, entire array)
+// Return Value: A new array containg elements that returned true
+const canDrink = ages.filter(function (age) {
+  if (age >= 21) {
+    return true;
+  }
+});
+console.log(canDrink);
 
 console.log('============================================');
-
 // Clean version
 
+const canDrinkClean = ages.filter(age => age >= 21);
+
+console.log(canDrinkClean);

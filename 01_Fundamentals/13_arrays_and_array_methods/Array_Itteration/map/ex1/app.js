@@ -13,22 +13,36 @@ const companies = [
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 21];
 
 
-// PROBLEM
+// PROBLEM: Create an array of company names
 // ======================================================
 
 // Vanilla Method (for Loop)
-
+const companyNamesVanilla = [];
 
 console.log('============================================');
 
-// Prototype Method: 
-// Desc: 
-// Parameters: ()
-// cb Paramters: ()
-// Return Value: 
+// Prototype Method: map()
+// Desc: Creates a new array populated with the results of cb
+// Parameters: (cb)
+// cb Paramters: (iterator, index, entire array)
+// Return Value: A new a array with each element from result of cb
+const companyNames = companies.map(function (company) {
+  return company.name;
+});
+console.log(companyNames);
 
+const test = companies.map(function (company) {
+  return 1;
+});
+console.log(test);
+
+const testMap = companies.map(function (company) {
+  return `${company.name} [${company.start} - ${company.end}]`;
+});
+console.log(testMap);
 
 console.log('============================================');
 
 // Clean version
-
+const testMapClean = companies.map(company => `${company.name} [${company.start} - ${company.end}]`);
+console.log(testMapClean);

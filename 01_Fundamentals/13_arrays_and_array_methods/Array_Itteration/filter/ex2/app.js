@@ -13,22 +13,38 @@ const companies = [
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 21];
 
 
-// PROBLEM
-// ======================================================
+// FILTER RETAIL COMPANIES
 
+// ======================================================
 // Vanilla Method (for Loop)
 
+const retailCompaniesVanilla = [];
+
+for (let i = 0; i < companies.length; i++) {
+  if (companies[i].category === "Retail") {
+    retailCompaniesVanilla.push(companies[i]);
+  }
+};
+console.log(retailCompaniesVanilla);
 
 console.log('============================================');
+// Prototype Method: filter()
+// Parameters: (cb function)
+// cb Paramters: (iterator, index, entire array)
+// Return Value: A new array containg elements that returned true
 
-// Prototype Method: 
-// Desc: 
-// Parameters: ()
-// cb Paramters: ()
-// Return Value: 
-
+const retailCompanies = companies.filter(function (company) {
+  if (company.category === "Retail") {
+    return true;
+  }
+});
+console.log(retailCompanies);
 
 console.log('============================================');
-
 // Clean version
+
+const retailCompaniesClean = companies.filter((company) => company.category === 'Retail');
+
+console.log(retailCompaniesClean);
+
 

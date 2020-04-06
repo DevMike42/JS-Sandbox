@@ -13,22 +13,31 @@ const companies = [
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 21];
 
 
-// PROBLEM
+// PROBLEM: Create an array of square root of each company's age
 // ======================================================
 
 // Vanilla Method (for Loop)
-
+const companyAgeSqrtVanilla = [];
 
 console.log('============================================');
 
-// Prototype Method: 
-// Desc: 
-// Parameters: ()
-// cb Paramters: ()
-// Return Value: 
+// Prototype Method: map()
+// Desc: Creates a new array populated with the results of cb
+// Parameters: (cb)
+// cb Paramters: (iterator, index, entire array)
+// Return Value: A new a array with each element from result of cb
 
 
 console.log('============================================');
 
 // Clean version
+const agesSquare = ages.map(age => Math.sqrt(age));
+console.log(agesSquare);
 
+const agesTimesTwo = ages.map(age => age * 2);
+console.log(agesTimesTwo);
+
+const agesSqrtTimesTwo = ages
+  .map(age => Math.sqrt(age))
+  .map(age => age * 2);
+console.log(agesSqrtTimesTwo);

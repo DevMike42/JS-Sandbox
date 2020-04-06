@@ -12,23 +12,23 @@ const companies = [
 
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 21];
 
+// LOOP THROUGH ARRAY OF OBJECTS AND RETURN VALUE OF EACH OBJECT
 
-// PROBLEM
 // ======================================================
-
-// Vanilla Method (for Loop)
-
-
-console.log('============================================');
-
-// Prototype Method: 
-// Desc: 
-// Parameters: ()
-// cb Paramters: ()
-// Return Value: 
-
+// Vanilla Method: for Loop
+for (let i = 0; i < companies.length; i++) {
+  console.log(companies[i]);
+}
 
 console.log('============================================');
+// Prototype Method: forEach()
+// Desc: Executes a cb function for itterating through arrays
+// Parameters: (cb function)
+// cb Paramters: (iterator, index, entire array)
+// Return Value: undefined
 
-// Clean version
-
+companies.forEach(function (company, index, array) {
+  console.log(company);
+  console.log(index);
+  console.log(array);
+});
