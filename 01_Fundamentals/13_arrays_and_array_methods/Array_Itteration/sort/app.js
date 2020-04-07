@@ -13,32 +13,31 @@ const companies = [
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 21];
 
 
-// PROBLEM: Add all ages together
+// PROBLEM: Sort the companies by start date
 // ======================================================
 
 // Vanilla Method (for Loop)
-let ageSumVanilla = 0;
-for (let i = 0; i < ages.length; i++) {
-  ageSumVanilla += ages[i]
-};
-console.log(ageSumVanilla);
-
+// TODO: Solve this (Might need to use recursion)
 
 console.log('============================================');
 
-// Prototype Method: reduce()
-// Desc: 
-// Parameters: (cb, initialValue)
-// cb Paramters: (accumulator, currentValue, index, ogArray)
-// Return Value: 
-const ageSum = ages.reduce(function (total, age) {
-  return total + age
-}, 0);
-console.log(ageSum);
+// Prototype Method: sort()
+// Desc: Sorts an array in ascending order
+// Parameters: ("compare" callback function)
+// cb Paramters: (firstElem, secondElem)
+// Return Value: A new sorted array
+const sortedCompanies = companies.sort(function (c1, c2) {
+  if (c1.start > c2.start) {
+    return 1;
+  } else {
+    return -1;
+  }
+});
+console.log(sortedCompanies);
 
 
 console.log('============================================');
 
 // Clean version
-const ageSumClean = ages.reduce((total, age) => total + age, 0);
-console.log(ageSumClean);
+const sortedCompaniesClean = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
+console.log(sortedCompaniesClean);

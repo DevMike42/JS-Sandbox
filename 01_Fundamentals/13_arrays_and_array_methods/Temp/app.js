@@ -16,12 +16,29 @@ console.log(mixed);
 let val;
 
 
-// Get Array length
-val = numbers.length;
+$('a').on('click', function (e) {
+  const btnId = e.target.id
+  console.log(btnId);
 
-console.log(numbers);
-console.log(val);
-console.log('--------------------');
+  switch (btnId) {
+    case 'arr-length':
+      findArrLength();
+      break;
+
+    default:
+      break;
+  }
+});
+
+
+
+
+// Get Array length
+const findArrLength = () => {
+  val = numbers.length;
+  console.log(val);
+};
+
 // ---------------------------------------
 
 // Check if is Array
