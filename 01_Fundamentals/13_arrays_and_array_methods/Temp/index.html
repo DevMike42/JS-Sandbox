@@ -20,43 +20,171 @@
       <hr class="my-4">
       <h3 class="text-center">Array Fundamentals</h3>
     </div>
+  </div>
 
+  <div class="px-5 mx-auto">
     <div class="mb-5">
-      <h2 class="text-center">Array of numbers</h2>
-      <h3 class="text-center">const numbers = [43, 56, 33, 23, 44, 36, 5];</h3>
+      <h2 class="text-center">Accessing Array Data</h2>
+      <h3 class="text-center">const numbers = [<span id="array1"></span>];</h3>
     </div>
 
-    <div class="d-flex justify-content-around my-5">
-      <a id="arr-length" href="#" class="btn btn-lg btn-info text-dark border border-dark">Get Array Length</a>
-      <a id="temp" href="#" class="btn btn-lg btn-info text-dark border border-dark">First</a>
-      <a id="temp" href="#" class="btn btn-lg btn-info text-dark border border-dark">First</a>
-      <a id="temp" href="#" class="btn btn-lg btn-info text-dark border border-dark">First</a>
-      <a id="temp" href="#" class="btn btn-lg btn-info text-dark border border-dark">First</a>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="findArrLength()">Get Array
+          Length</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Finds the number of values in an array</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Returns: number</h4>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="checkIfIsArray()">Check if is
+          Array</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Checks if data type is Array</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Returns: boolean</h4>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="getSingleValue()">Get Single
+          Value</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Get single value of specific index (ex. Index 3)</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Returns: value</h4>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="findIndexOf()">Index Of</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Finds the index of a specific value in an array (ex. Find 36)</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Returns: index #</h4>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="px-5 mx-auto mt-5">
+    <div class="mb-5">
+      <h2 class="text-center">Mutating Arrays</h2>
+      <h3 class="text-center">const numbers = [<span id="array2"></span>];</h3>
     </div>
 
-    <hr>
-
-    <div class="my-5">
-      <h2 class="text-center">Array of strings</h2>
-      <h3 class="text-center">const fruit = ['Apple', 'Banana', 'Orange', 'Pear'];</h3>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="insertInto()">Insert
+          Into</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Replaces value of specific index (ex. Replace Index 3 with 100)</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Output: Updated Array</h4>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="addToEnd()">Add on to
+          END</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Adds a number to the END of an array</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Output: Updated Array</h4>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="removeFromEnd()">Remove From
+          END</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Removes a number from the END of an array</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Output: Updated Array</h4>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="addToFront()">Add on to
+          FRONT</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Adds a number to the FRONT of an array</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Output: Updated Array</h4>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="removeFromFront()">Remove from
+          FRONT</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Removes a number from the FRONT of an array</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Output: Updated Array</h4>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="removeSingleIndex()">Remove
+          single index</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Removes a single value from a specified index of an array</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Output: Updated Array</h4>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-2">
+        <button class="btn btn-lg btn-info text-dark border border-dark w-100" onclick="removeMultipleIndexes()">Remove
+          multiple indexes</button>
+      </div>
+      <div class="col-7 d-flex align-items-center">
+        <h4 class="m-0">Removes values starting at a specified index and beyond</h4>
+      </div>
+      <div class="col-3 d-flex align-items-center">
+        <h4 class="m-0">Output: Updated Array</h4>
+      </div>
     </div>
 
-    <div class="d-flex justify-content-around my-4">
-      <a id="temp" href="#" class="btn btn-lg btn-info text-dark border border-dark">First</a>
-    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
